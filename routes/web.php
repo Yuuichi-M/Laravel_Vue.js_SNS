@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//認証系
 Auth::routes();
-Route::get('/', 'ArticleController@index');
+
+Route::get('/', 'ArticleController@index')->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index']);
