@@ -2,6 +2,8 @@
 
 @section('title', 'ログイン')
 
+@include('nav')
+
 @section('content')
 <div class="container">
     <div class="row">
