@@ -24,7 +24,6 @@ class Article extends Model
     //多対多の関係を定義 belongsToMany(関係するモデル名, 中間テーブル名)
     public function likes(): BelongsToMany
     {
-        //
         return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
 
