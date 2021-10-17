@@ -1,4 +1,5 @@
 @csrf
+
 <div class="md-form">
     <label>タイトル</label>
     <input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
