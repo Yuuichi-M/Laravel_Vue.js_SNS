@@ -6,7 +6,7 @@
 </div>
 
 <div class="form-group">
-    <article-tags-input :initial-tags='@json($tagNames ?? [])'>
+    <article-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'>
     </article-tags-input>
 </div>
 
