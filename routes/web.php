@@ -13,6 +13,11 @@
 //認証系
 Auth::routes();
 
+//Googleログイン
+Route::prefix('login')->name('login.')->group(function () {
+    Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
+});
+
 //記事投稿系
 Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index'])->middleware('auth');
