@@ -19,6 +19,14 @@ Route::prefix('login')->name('login.')->group(function () {
     Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('{provider}.callback');
 });
 
+//Googleログイン用ユーザー登録
+Route::prefix('register')->name('register.')->group(function () {
+    //画面
+    Route::get('/{provider}', 'Auth\RegisterController@showProviderUserRegistrationForm')->name('{provider}');
+    //機能
+    Route::post('/{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
+});
+
 //記事投稿系
 Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index'])->middleware('auth');
